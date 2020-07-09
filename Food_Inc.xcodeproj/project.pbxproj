@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		33502D6224B667C2001EBBDE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 33502D5F24B667C2001EBBDE /* Podfile */; };
 		33502D6324B667C2001EBBDE /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 33502D6024B667C2001EBBDE /* Podfile.lock */; };
-		33502D6424B667C2001EBBDE /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 33502D6124B667C2001EBBDE /* Pods */; };
-		33502D6724B6682E001EBBDE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33502D6624B6682E001EBBDE /* GoogleService-Info.plist */; };
 		5E788B663117892FB7DBE41C /* Pods_Food_IncTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704BF10F899B54F1243E86FC /* Pods_Food_IncTests.framework */; };
 		66AD4353EC8A8ED819CE2708 /* Pods_Food_Inc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93444AB26064DEB26200495 /* Pods_Food_Inc.framework */; };
 		8354BBD2B7854021AC75CE38 /* Pods_Food_Inc_Food_IncUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7958AF1FC318E8924EA9A46E /* Pods_Food_Inc_Food_IncUITests.framework */; };
@@ -51,8 +49,7 @@
 		28F73C36FC16AAB60964663F /* Pods-Food_Inc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food_Inc.debug.xcconfig"; path = "Target Support Files/Pods-Food_Inc/Pods-Food_Inc.debug.xcconfig"; sourceTree = "<group>"; };
 		33502D5F24B667C2001EBBDE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = "Food_Inc/Firebase API/Podfile"; sourceTree = SOURCE_ROOT; };
 		33502D6024B667C2001EBBDE /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile.lock; path = "Food_Inc/Firebase API/Podfile.lock"; sourceTree = SOURCE_ROOT; };
-		33502D6124B667C2001EBBDE /* Pods */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = Pods; path = "Food_Inc/Firebase API/Pods"; sourceTree = SOURCE_ROOT; };
-		33502D6624B6682E001EBBDE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../swift/hello world/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33964B5024B769FF0083E721 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "../../../../swift/hello world/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		41ECCC22263B985AFE595B23 /* Pods-Food_IncTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food_IncTests.release.xcconfig"; path = "Target Support Files/Pods-Food_IncTests/Pods-Food_IncTests.release.xcconfig"; sourceTree = "<group>"; };
 		704BF10F899B54F1243E86FC /* Pods_Food_IncTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_IncTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7958AF1FC318E8924EA9A46E /* Pods_Food_Inc_Food_IncUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Inc_Food_IncUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,17 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33502D6524B667DE001EBBDE /* Firebase API */ = {
-			isa = PBXGroup;
-			children = (
-				33502D6624B6682E001EBBDE /* GoogleService-Info.plist */,
-				33502D5F24B667C2001EBBDE /* Podfile */,
-				33502D6024B667C2001EBBDE /* Podfile.lock */,
-				33502D6124B667C2001EBBDE /* Pods */,
-			);
-			path = "Firebase API";
-			sourceTree = "<group>";
-		};
 		BED6019A9176AA234B7E7258 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +116,6 @@
 				0AD0A3CA8058AD5F397F520E /* Pods-Food_IncTests.debug.xcconfig */,
 				41ECCC22263B985AFE595B23 /* Pods-Food_IncTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -169,8 +154,10 @@
 				DD6589E624B65B49006D2634 /* Assets.xcassets */,
 				DD6589EB24B65B49006D2634 /* LaunchScreen.storyboard */,
 				DD6589EE24B65B49006D2634 /* Info.plist */,
+				33964B5024B769FF0083E721 /* GoogleService-Info.plist */,
+				33502D5F24B667C2001EBBDE /* Podfile */,
+				33502D6024B667C2001EBBDE /* Podfile.lock */,
 				DD6D3ABB24B6892200DB936C /* Models */,
-				33502D6524B667DE001EBBDE /* Firebase API */,
 				DD6589E824B65B49006D2634 /* Preview Content */,
 			);
 			path = Food_Inc;
@@ -232,6 +219,7 @@
 				DD6589D924B65B40006D2634 /* Sources */,
 				DD6589DA24B65B40006D2634 /* Frameworks */,
 				DD6589DB24B65B40006D2634 /* Resources */,
+				D429BA3CD3EB4ED89F5E6876 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +257,7 @@
 				DD6589FA24B65B49006D2634 /* Sources */,
 				DD6589FB24B65B49006D2634 /* Frameworks */,
 				DD6589FC24B65B49006D2634 /* Resources */,
+				E45CD66C1C60D4C924AAFC4B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,11 +319,9 @@
 			files = (
 				DD6589ED24B65B49006D2634 /* LaunchScreen.storyboard in Resources */,
 				DD6589EA24B65B49006D2634 /* Preview Assets.xcassets in Resources */,
-				33502D6424B667C2001EBBDE /* Pods in Resources */,
 				33502D6324B667C2001EBBDE /* Podfile.lock in Resources */,
 				33502D6224B667C2001EBBDE /* Podfile in Resources */,
 				DD6589E724B65B49006D2634 /* Assets.xcassets in Resources */,
-				33502D6724B6682E001EBBDE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +406,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D429BA3CD3EB4ED89F5E6876 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food_Inc/Pods-Food_Inc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food_Inc/Pods-Food_Inc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Food_Inc/Pods-Food_Inc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E45CD66C1C60D4C924AAFC4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food_Inc-Food_IncUITests/Pods-Food_Inc-Food_IncUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food_Inc-Food_IncUITests/Pods-Food_Inc-Food_IncUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Food_Inc-Food_IncUITests/Pods-Food_Inc-Food_IncUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
