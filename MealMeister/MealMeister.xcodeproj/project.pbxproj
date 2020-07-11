@@ -15,7 +15,7 @@
 		33F67D8D24B9746800235DE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33F67D8B24B9746800235DE0 /* LaunchScreen.storyboard */; };
 		33F67D9824B9746800235DE0 /* MealMeisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F67D9724B9746800235DE0 /* MealMeisterTests.swift */; };
 		33F67DA324B9746800235DE0 /* MealMeisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F67DA224B9746800235DE0 /* MealMeisterUITests.swift */; };
-		33F67DB124B9750B00235DE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33F67DB024B9750B00235DE0 /* GoogleService-Info.plist */; };
+		33F67DB324B9793F00235DE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33F67DB224B9793F00235DE0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		33F67D9E24B9746800235DE0 /* MealMeisterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealMeisterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F67DA224B9746800235DE0 /* MealMeisterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMeisterUITests.swift; sourceTree = "<group>"; };
 		33F67DA424B9746800235DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33F67DB024B9750B00235DE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33F67DB224B9793F00235DE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 				33F67D8624B9746800235DE0 /* Assets.xcassets */,
 				33F67D8B24B9746800235DE0 /* LaunchScreen.storyboard */,
 				33F67D8E24B9746800235DE0 /* Info.plist */,
-				33F67DB024B9750B00235DE0 /* GoogleService-Info.plist */,
+				33F67DB224B9793F00235DE0 /* GoogleService-Info.plist */,
 				33F67D8824B9746800235DE0 /* Preview Content */,
 			);
 			path = MealMeister;
@@ -244,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F67D8D24B9746800235DE0 /* LaunchScreen.storyboard in Resources */,
-				33F67DB124B9750B00235DE0 /* GoogleService-Info.plist in Resources */,
+				33F67DB324B9793F00235DE0 /* GoogleService-Info.plist in Resources */,
 				33F67D8A24B9746800235DE0 /* Preview Assets.xcassets in Resources */,
 				33F67D8724B9746800235DE0 /* Assets.xcassets in Resources */,
 			);
