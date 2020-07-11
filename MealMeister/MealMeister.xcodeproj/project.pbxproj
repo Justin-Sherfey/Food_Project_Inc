@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		57F3B5F696BC4A7ACFCCB27A /* Pods_MealMeister_MealMeisterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD5101A73E2F146B748EEF9 /* Pods_MealMeister_MealMeisterUITests.framework */; };
 		67700E13FE78D165CC0DF162 /* Pods_MealMeister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D409B769466FACD8FF6ED34A /* Pods_MealMeister.framework */; };
 		9EF9C31875A4051B8F24BE0C /* Pods_MealMeisterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5C50472FB3FA67F678FBE8 /* Pods_MealMeisterTests.framework */; };
+		DDFF370624B97F3900E9764C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF370524B97F3900E9764C /* Data.swift */; };
+		DDFF370824B97F7700E9764C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFF370724B97F7700E9764C /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D409B769466FACD8FF6ED34A /* Pods_MealMeister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMeister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F51DB25E90BC02CF4E36DE /* Pods-MealMeisterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMeisterTests.release.xcconfig"; path = "Target Support Files/Pods-MealMeisterTests/Pods-MealMeisterTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD21F96C8A81DBA3AD6F2937 /* Pods-MealMeister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMeister.release.xcconfig"; path = "Target Support Files/Pods-MealMeister/Pods-MealMeister.release.xcconfig"; sourceTree = "<group>"; };
+		DDFF370524B97F3900E9764C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		DDFF370724B97F7700E9764C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,6 @@
 				CD1CB85153DBC170A5AD0F30 /* Pods-MealMeisterTests.debug.xcconfig */,
 				D5F51DB25E90BC02CF4E36DE /* Pods-MealMeisterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -139,6 +142,7 @@
 				33F67D8B24B9746800235DE0 /* LaunchScreen.storyboard */,
 				33F67D8E24B9746800235DE0 /* Info.plist */,
 				33F67DB224B9793F00235DE0 /* GoogleService-Info.plist */,
+				DDFF370424B97F1600E9764C /* Models */,
 				33F67D8824B9746800235DE0 /* Preview Content */,
 			);
 			path = MealMeister;
@@ -178,6 +182,15 @@
 				7C5C50472FB3FA67F678FBE8 /* Pods_MealMeisterTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDFF370424B97F1600E9764C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDFF370524B97F3900E9764C /* Data.swift */,
+				DDFF370724B97F7700E9764C /* Restaurant.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,9 +433,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFF370824B97F7700E9764C /* Restaurant.swift in Sources */,
 				33F67D8124B9746500235DE0 /* AppDelegate.swift in Sources */,
 				33F67D8324B9746500235DE0 /* SceneDelegate.swift in Sources */,
 				33F67D8524B9746500235DE0 /* ContentView.swift in Sources */,
+				DDFF370624B97F3900E9764C /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
