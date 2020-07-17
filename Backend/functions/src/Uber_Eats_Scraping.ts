@@ -1,15 +1,5 @@
 const ueURL = 'https://www.ubereats.com/';
 
-
-function sleep(milliseconds: number): void {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
-
-
 exports.scrapeUEFeatured = async() => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();

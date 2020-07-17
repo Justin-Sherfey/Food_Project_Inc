@@ -10,19 +10,19 @@ function sleep(milliseconds: number): void {
  *
  */
 function union(arr1: Array<string>, arr2: Array<string>): Array<string> {
-    let union = Array<string>();
+    const unionArray = Array<string>();
     let item: string;
     for (item in arr1) {
         if (item in arr2) {
-            union.push(item);
+            unionArray.push(item);
         };
     };
-    return union;
+    return unionArray;
 };
 
 function formatRestaurants(array: Array<string>): Array<object> {
     let restaurantDN: string;
-    let restaurants = Array<object>();
+    const restaurants = Array<object>();
     for (restaurantDN in array) {
         const restaurant = {
             Display_Name: 'restaurantDN',

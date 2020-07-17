@@ -14,7 +14,7 @@ exports.scrapeGHFeatured = async() => {
     sleep(10000);
 
     let favorites = Array<string>();
-    while (favorites.length == 0) {
+    while (favorites.length === 0) {
         favorites =  await page.evaluate(
         () => Array.from(
         document.querySelectorAll("h5.u-text-ellipsis")

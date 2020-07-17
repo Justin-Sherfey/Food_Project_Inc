@@ -18,9 +18,9 @@ const GH = require('./Grub_Hub_Scraping');
 
 //featured section
 exports.updateFeatured = functions.pubsub.schedule('every day').onRun(
-    (context) => {
+    async (context: any) => {
         const featuredArray = union(UE.scrapeUEFeatured(), GH.scrapeGHFeatured());
         const featuredRestaurants = formatRestaurants(featuredArray);
-        sendToDB(featuredRestaurants);
+        await sendToDB(featuredRestaurants);
     }
 )
