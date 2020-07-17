@@ -1,8 +1,7 @@
-const puppeteer = require('puppeteer');
-const url = 'https://www.ubereats.com/';
+const ueURL = 'https://www.ubereats.com/';
 
 
-function sleep(milliseconds) {
+function sleep(milliseconds: number): void {
   const date = Date.now();
   let currentDate = null;
   do {
@@ -11,10 +10,10 @@ function sleep(milliseconds) {
 }
 
 
-export async function scrapeUEFeatured() {
+exports.scrapeUEFeatured = async() => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(url);
+    await page.goto(ueURL);
 
     const addressBar = '#location-typeahead-home-input';
     await page.click(addressBar);
@@ -36,6 +35,8 @@ export async function scrapeUEFeatured() {
     );
     featRests = featRests.slice( 0, 10);
 
-    console.log(featRests);
+    await browser.close();
+    return featRests;
+
 };
 
