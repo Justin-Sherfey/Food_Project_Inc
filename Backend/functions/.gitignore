@@ -6,3 +6,6 @@
 typings/
 
 node_modules/
+
+# personal files
+.DS_Store
