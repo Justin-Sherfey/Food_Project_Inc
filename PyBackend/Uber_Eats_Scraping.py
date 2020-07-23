@@ -35,5 +35,5 @@ def scrapeFeatured(browser=navToFeatured()):
     
     browser.close()
 
-    return featured
+    return featured[0:10]
 
