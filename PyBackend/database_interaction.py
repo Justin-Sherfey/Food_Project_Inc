@@ -1,5 +1,5 @@
 from Uber_Eats_Scraping import scrapeFeatured
-import firebase_admin 
+import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
@@ -12,8 +12,8 @@ db = firestore.client()
 featured = scrapeFeatured()
 
 for displayName in featured:
-    restaurant = db.collection(u'Restaurants').document(u + displayName)
+    restaurant = db.collection(u'Restaurants').document(displayName)
     restaurant.set({
-        u'Display_Name': u+displayName,
+        u'Display_Name': displayName,
         u'name': u'temp'
     })
