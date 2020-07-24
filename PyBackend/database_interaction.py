@@ -18,17 +18,18 @@ ghFeat = []
 ueFeat = []
 
 for scrape in ghScrape:
-    name = helpers.parseName(scrape)
-    rest = Restaurant(scrape, name)
+    tup = Grub_Hub_Scraping.parse(scrape)
+    rest = Restaurant(tup[0], tup[1], tup[2])
     ghFeat.append(rest)
 
 for scrape in ueScrape:
-    name = helpers.parseName(scrape)
-    rest = Restaurant(scrape, name)
+    tup = Uber_Eats_Scraping.parse(scrape)
+    rest = Restaurant(tup[0], tup[1], tup[2])
     ueFeat.append(rest)
 
-toSend = helpers.getUnion(ghFeat, ueFeat)
-print(toSend)
+toSend = helpers.getUnion(ueFeat, ghFeat)[1::]
+for to in toSend:
+    print(to.name)
 
 for rest in toSend:
     docRef = db.collection(u'Restaurants').document(rest.name)

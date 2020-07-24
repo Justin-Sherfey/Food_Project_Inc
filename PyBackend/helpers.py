@@ -18,8 +18,8 @@ def getUnion(restaurantArr1, restaurantArr2):
 
 
 def parseName(displayName):
-    if ' - ' in displayName:
-        end = displayName.index(' - ')
+    if '- ' in displayName:
+        end = displayName.index('- ')
         displayName = displayName[0:end]
     elif '(' in displayName:
         end = displayName.index('(')
@@ -28,3 +28,14 @@ def parseName(displayName):
     return displayName
 
 
+def parseTags(string):
+    if ' • ' in string:
+        return string.split(' • ')
+    elif '$' in string:
+        return []
+    elif 'Featured' in string:
+        return []
+    elif 'Delivery' in string:
+        return []
+    else:
+        return [string]
