@@ -1,3 +1,13 @@
+"""
+functions for scraping uber eats
+
+includes:
+navigation
+scraping
+parsing
+"""
+
+
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -9,15 +19,22 @@ from Restaurant import Restaurant
 URL = 'https://www.ubereats.com/'
 
 
+"""
+navigation function for bringing web scraper to the main page to be scraped
+"""
 def navToFeatured():
     browser = Chrome(executable_path='./chromedriver')
     browser.get(URL)
 
-    addBar = browser.find_element(By.XPATH, '//*[@id="location-typeahead-home-input"]')
+    addBar = browser.find_element(By.XPATH, '//*[@id="location-\
+            typeahead-home-input"]'
+            )
     addBar.click()
     addBar.send_keys('92117')
     sleep(1)
-    findFood = browser.find_element(By.XPATH, '//*[@id="wrapper"]/main/div[1]/div[2]/div/button')
+    findFood = browser.find_element(By.XPATH, '//*[@id="wrapper"]/\
+            main/div[1]/div[2]/div/button'
+            )
     findFood.click()
     sleep(10)
 
@@ -27,7 +44,10 @@ def navToFeatured():
 
     return browser
 
-
+"""
+main scraping function,
+currently collects name, displayName, and tags
+"""
 def scrapeFeatured(browser=navToFeatured()):
     rests = browser.find_elements(By.XPATH, '//*[@class="af"]')
     featured = []
@@ -39,7 +59,9 @@ def scrapeFeatured(browser=navToFeatured()):
 
     return featured[1:11]
 
-
+"""
+function for parsing scraped data and formatting it into usable data
+"""
 def parse(string):
     parts = string.split('\n')
     displayName = parts[0]

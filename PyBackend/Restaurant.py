@@ -1,5 +1,12 @@
+"""
+restaurant class, main utility is to provide easy access JSON object
+and gives an easy way to reference specific Restaurants
+"""
 class Restaurant:
 
+    """
+    series of init functions for any amount of data
+    """
     def __init__(self, displayName):
         self.JSON = {
                 u'Display_Name': displayName,
@@ -30,6 +37,10 @@ class Restaurant:
         self.name = name
         self.tags = tags
 
+    
+    """
+    == function to help with finding union
+    """
     def __eq__(self, other):
         if self.name == other.name:
             return True

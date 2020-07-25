@@ -1,3 +1,9 @@
+"""
+procedure for interacting with the firebase database with some printing to
+check for errors
+"""
+
+
 import Grub_Hub_Scraping, Uber_Eats_Scraping
 import firebase_admin
 from firebase_admin import credentials

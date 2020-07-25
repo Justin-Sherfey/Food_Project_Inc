@@ -1,3 +1,11 @@
+"""
+helper funtions for non-site specific tasks
+"""
+
+
+"""
+finds and returns the union of two arrays
+"""
 def getUnion(restaurantArr1, restaurantArr2):
     union = []
 
@@ -17,6 +25,9 @@ def getUnion(restaurantArr1, restaurantArr2):
     return union
 
 
+"""
+parses and returns the name of a restaurant from its displayName
+"""
 def parseName(displayName):
     if '- ' in displayName:
         end = displayName.index('- ')
@@ -28,6 +39,9 @@ def parseName(displayName):
     return displayName
 
 
+"""
+parses and returns the tags of a restaurant from a string
+"""
 def parseTags(string):
     if ' • ' in string:
         return string.split(' • ')
