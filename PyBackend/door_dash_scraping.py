@@ -8,54 +8,50 @@ parsing
 """
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from time import sleep
-import helpers
-
 
 # global constants
 URL = 'https://www.doordash.com/en-US'
 
 
 def navigate(start, zipCode):
+    # start browser and navigate to main page
     browser = Chrome(executable_path='./chromedriver')
+    browser.implicitly_wait(10)
     browser.get(start)
 
-    addBar = WebDriverWait(browser, timeout=5).until(
-            lambda b: b.find_element(
-                By.XPATH, '//*[@placeholder="Enter delivery address"]'
-                )
+    # find address bar > enter zip code and hit enter
+    addbar = browser.find_element_by_xpath(
+            '//*[@placeholder="Enter delivery address"]'
             )
-    sleep(1)
-
-    addBar.click()
-    addBar.send_keys(zipCode)
-    sleep(1)
-    addBar.send_keys(Keys.ENTER)
-    sleep(5)
-
+    addbar.click()
+    addbar.send_keys(zipCode)
+    addbar.send_keys(Keys.ENTER)
+    
     return browser
 
 
 def scrape(browser):
+    # select region with all restaurants
     allRests = WebDriverWait(browser, timeout=5).until(
-            lambda b: b.find_element(
-                By.XPATH, '//*[@id="root"]/div/div[1]/div[2]/div/div/div[1]/div[5]/div/div[2]'
+            lambda b: b.find_element_by_xpath(
+                '//*[@id="root"]/div/div[1]/div[2]/div/div/div[1]/div[5]/div/div[2]'
                 )
             )
 
+    # select all restaurants
     rests = WebDriverWait(allRests, timeout=5).until(
-            lambda a: a.find_elements(
-                By.XPATH, '//*[@data-anchor-id="StoreCard"]'
+            lambda a: a.find_elements_by_xpath(
+                '//*[@data-anchor-id="StoreCard"]'
                 )
             )
 
+    # map restaruants to text soup
     displayNames = list(map(lambda e: e.text, rests))
 
     return displayNames
 
 
+def parse(text):
 
-print(scrape(navigate(URL, '92117')))
 

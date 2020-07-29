@@ -6,41 +6,31 @@ navigation
 scraping
 parsing
 """
-
-
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from time import sleep
-import helpers
-from Restaurant import Restaurant
+from selenium.webdriver.support.ui import WebDriverWait
 
-
+# global constants
 URL = 'https://www.ubereats.com/'
-
+CHROME_PATH = './chromedriver'
+WAIT = 10
 
 """
 navigation function for bringing web scraper to the main page to be scraped
 """
-def navToFeatured():
-    browser = Chrome(executable_path='./chromedriver')
+def navigate(zipCode):
+    # start browser and navigate to main page
+    browser = Chrome(executable_path=CHROME_PATH)
+    browser.implicitly_wait(WAIT)
     browser.get(URL)
 
-    addBar = browser.find_element(By.XPATH, '//*[@id="location-\
-            typeahead-home-input"]'
+    # find address bar > input zip and hit enter
+    addBar = browser.find_element_by_xpath(
+            '//*[@id="location-typeahead-home-input"]'
             )
     addBar.click()
-    addBar.send_keys('92117')
-    sleep(1)
-    findFood = browser.find_element(By.XPATH, '//*[@id="wrapper"]/\
-            main/div[1]/div[2]/div/button'
-            )
-    findFood.click()
-    sleep(10)
-
-    popular = browser.find_element(By.XPATH, '//*[@class="bm bn bo e7"]')
-    popular.click()
-    sleep(5)
+    addBar.send_keys(zipCode)
+    addbar.send_keys(Keys.ENTER)
 
     return browser
 
@@ -48,16 +38,20 @@ def navToFeatured():
 main scraping function,
 currently collects name, displayName, and tags
 """
-def scrapeFeatured(browser=navToFeatured()):
-    rests = browser.find_elements(By.XPATH, '//*[@class="af"]')
-    featured = []
+def scrape(browser):
+    #TODO: add section for navigating to all restaurants
+    
+    # find all restaurants
+    rests = WebDriverWait(browser, timeout=WAIT).until(
+            lambda b: b.find_elements_by_xpath(
+                '//*[@class="af"]'
+                )
+            )
+    
+    # map rests to text soup
+    texts = list(map(lambda e: e.text, rests))
 
-    for rest in rests:
-        featured.append(rest.text)
-
-    browser.close()
-
-    return featured[1:11]
+    return texts
 
 """
 function for parsing scraped data and formatting it into usable data
