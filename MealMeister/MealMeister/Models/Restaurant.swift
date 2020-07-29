@@ -6,23 +6,12 @@
 //  Copyright © 2020 Andrew Thomas. All rights reserved.
 //
 
-import SwiftUI
-import CoreLocation
+import Foundation
 
-struct Restaurant: Hashable, Codable, Identifiable {
-    var id: Int
+struct Restaurant: Identifiable {
+    var id: String = UUID().uuidString
+    
+    var displayName: String
     var name: String
-    fileprivate var imageName: String
-    var isFavorite: Bool
-    var isFeatured: Bool
-
-    enum Category: String, CaseIterable, Codable, Hashable {
-        case featured = "Featured"
-    }
-}
-
-extension Restaurant {
-    var image: Image {
-        ImageStore.shared.image(name: imageName)
-    }
+    var tag: String
 }
