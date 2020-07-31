@@ -13,13 +13,13 @@ struct FeaturedRestaurantsView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.restaurants) { Restaurant in
+            List(viewModel.restaurants) { restaurant in
                 VStack(alignment: .leading) {
-                    Text(Restaurant.displayName)
+                    Text(restaurant.displayName)
                         .font(.headline)
-                    Text(Restaurant.name)
+                    Text(restaurant.name)
                         .font(.subheadline)
-                    Text(Restaurant.tag)
+                    Text(restaurant.tag)
                         .font(.subheadline)
                 }
             }
@@ -30,3 +30,10 @@ struct FeaturedRestaurantsView: View {
         }
     }
 }
+
+struct FeaturedRestaurantsView_Previews: PreviewProvider {
+    static var previews: some View {
+        FeaturedRestaurantsView()
+    }
+}
+
