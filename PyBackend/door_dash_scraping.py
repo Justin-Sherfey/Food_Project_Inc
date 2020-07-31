@@ -23,7 +23,7 @@ function for navigating to scrapable part of site
 def navigate(start, zipCode):
     # start browser and navigate to main page
     browser = Chrome(executable_path='./chromedriver')
-    browser.get(start) 
+    browser.get(start)
 
     # find address bar > enter zip code and hit enter
     addbar = WebDriverWait(browser, timeout=5).until(
@@ -74,6 +74,7 @@ def parse(text):
     displayName = parts[0]
     name = helpers.parseName(displayName)
     tags = helpers.parseTags(parts[2])
+    rating = helpers.parseRating(parts[-3])
 
-    return (displayName, name, tags)
+    return (displayName, name, tags, rating)
 

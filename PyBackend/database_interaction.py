@@ -4,7 +4,7 @@ check for errors
 """
 
 
-import Grub_Hub_Scraping, Uber_Eats_Scraping
+import door_dash_scraping, grub_hub_scraping, uber_eats_scraping 
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
@@ -12,28 +12,37 @@ import helpers
 from Restaurant import Restaurant
 
 # Use a service account
-cred = credentials.Certificate('../../project-food-5b105-d02a0c57a1eb.json')
+cred = credentials.Certificate('../../../Auth files/project-food-5b105-d02a0c57a1eb.json')
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-ghScrape = Grub_Hub_Scraping.scrapeFeatured()
-ueScrape = Uber_Eats_Scraping.scrapeFeatured()
+dd = [
+        door_dash_scraping.parse(x) for x in door_dash_scraping.scrape(
+            door_dash_scraping.navigate(door_dash_scraping.URL, '92117')
+            )
+        ]
 
-ghFeat = []
-ueFeat = []
+gh = [
+        grub_hub_scraping.parse(x) for x in grub_hub_scraping.scrape( 
+            grub_hub_scraping.navigate('92117')
+            )
+        ]
 
-for scrape in ghScrape:
-    tup = Grub_Hub_Scraping.parse(scrape)
-    rest = Restaurant(tup[0], tup[1], tup[2])
-    ghFeat.append(rest)
 
-for scrape in ueScrape:
-    tup = Uber_Eats_Scraping.parse(scrape)
-    rest = Restaurant(tup[0], tup[1], tup[2])
-    ueFeat.append(rest)
+ue = [
+        uber_eats_scraping.parse(x) for x in uber_eats_scraping.scrape( 
+            uber_eats_scraping.navigate('92117')
+            )
+        ]
 
-toSend = helpers.getUnion(ueFeat, ghFeat)[1::]
+dd = list(map(lambda r: Restaurant(r[0], r[1], r[2], r[3]), dd))
+
+ue = list(map(lambda r: Restaurant(r[0], r[1], r[2], r[3]), ue))
+
+gh = list(map(lambda r: Restaurant(r[0], r[1], r[2], r[3]), gh))
+
+toSend = helpers.getUnion(ue, dd, gh)
 for to in toSend:
     print(to.name)
 

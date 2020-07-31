@@ -1,3 +1,4 @@
+# TODO: fix stale element problem
 """
 functions for scraping grub hub
 
@@ -32,12 +33,6 @@ def navigate(zipCode):
     addBar.click()
     addBar.send_keys(zipCode)
     addBar.send_keys(Keys.ENTER)
-
-    # find pop up and clear it
-    popUp = browser.find_element_by_xpath(
-            '//*[@id="chiri-modal"]/div/div/div[1]/a'
-            )
-    popUp.click()
 
     # find filter button and clear it
     clearFilters = browser.find_element_by_xpath(
@@ -75,5 +70,5 @@ def parse(string):
     name = helpers.parseName(displayName)
     tags = helpers.parseTags(parts[1])
 
-    return (displayName, name, tags)
+    return (displayName, name, tags, None)
 

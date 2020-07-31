@@ -10,34 +10,39 @@ class Restaurant:
     def __init__(self, displayName):
         self.JSON = {
                 u'Display_Name': displayName,
-                u'name': None, 
-                u'tags': None
+                u'name': None,
+                u'tags': None,
+                u'rating': None
             }
-
-        self.displayName = displayName
         self.name = None
 
     def __init__(self, displayName, name):
         self.JSON = {
                 u'Display_Name': displayName,
                 u'name': name,
-                u'tags': None
+                u'tags': None,
+                u'rating': None
             }
-
-        self.displayName = displayName
         self.name = name
 
     def __init__(self, displayName, name, tags):
         self.JSON = {
                 u'Display_Name': displayName,
                 u'name': name,
-                u'tags': tags
+                u'tags': tags,
+                u'rating': None
             }
-        self.displayName = displayName
         self.name = name
-        self.tags = tags
 
-    
+    def __init__(self, displayName, name, tags, rating):
+        self.JSON = {
+                u'Display_Name': displayName,
+                u'name': name,
+                u'tags': tags,
+                u'rating': rating
+                }
+        self.name = name
+
     """
     == function to help with finding union
     """
@@ -46,3 +51,4 @@ class Restaurant:
             return True
         else:
             return False
+

@@ -6,21 +6,13 @@ helper funtions for non-site specific tasks
 """
 finds and returns the union of two arrays
 """
-def getUnion(restaurantArr1, restaurantArr2):
+# TODO: fix // make more robust
+def getUnion(*lists):
     union = []
-
-    for rest in restaurantArr1:
-        union.append(rest)
-
-    for rest in restaurantArr2:
-        match = False
-        for comp in union:
-            if comp == rest:
-                match = True
-        if match:
-            continue
-        else:
-            union.append(rest)
+    for lst in lists:
+        for item in lst:
+            if item not in union:
+                union.append(item)
 
     return union
 
@@ -35,6 +27,12 @@ def parseName(displayName):
     elif '(' in displayName:
         end = displayName.index('(')
         displayName = displayName[0:end]
+    
+    if '/' in displayName:
+        split = displayName.index('/')
+        first = displayName[0:split]
+        last = displayName[split+1::]
+        displayName = first + ' & ' + last
 
     return displayName
 
@@ -53,3 +51,13 @@ def parseTags(string):
         return []
     else:
         return [string]
+
+
+"""
+helper for dealing with edge cases in rating parsing
+"""
+def parseRating(string):
+    try:
+        return float(string)
+    except:
+        return None
