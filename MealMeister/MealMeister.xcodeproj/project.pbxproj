@@ -75,8 +75,6 @@
 		DB18668124BA93A3000EFAE8 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DB4D5DD324D22C77009F5CE7 /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantViewModel.swift; path = MealMeister/RestaurantViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DB4D5DD724D22F46009F5CE7 /* FeaturedRestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedRestaurantsView.swift; sourceTree = "<group>"; };
-		DB4D5DD924D368DB009F5CE7 /* testview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testview.swift; sourceTree = "<group>"; };
-		DB4D5DDB24D36DB5009F5CE7 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		DD21F96C8A81DBA3AD6F2937 /* Pods-MealMeister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMeister.release.xcconfig"; path = "Target Support Files/Pods-MealMeister/Pods-MealMeister.release.xcconfig"; sourceTree = "<group>"; };
 		DDFF370524B97F3900E9764C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		DDFF370724B97F7700E9764C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 			children = (
 				33F67D8024B9746500235DE0 /* AppDelegate.swift */,
 				33F67D8224B9746500235DE0 /* SceneDelegate.swift */,
-				DB4D5DD924D368DB009F5CE7 /* testview.swift */,
 				33F67D8424B9746500235DE0 /* ContentView.swift */,
 				DB18668124BA93A3000EFAE8 /* Home.swift */,
 				DB4D5DD724D22F46009F5CE7 /* FeaturedRestaurantsView.swift */,
@@ -203,7 +200,6 @@
 		DB4D5DD224D22C44009F5CE7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				DB4D5DDB24D36DB5009F5CE7 /* RestaurantCell.swift */,
 				DB4D5DD324D22C77009F5CE7 /* RestaurantViewModel.swift */,
 			);
 			path = ViewModels;
