@@ -13,5 +13,5 @@ struct Restaurant: Identifiable {
     
     var name: String
     var rating: Double
-    var tag: Array<String>
+    var tags: Array<String>
 }

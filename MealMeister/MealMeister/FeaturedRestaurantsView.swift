@@ -19,6 +19,8 @@ struct FeaturedRestaurantsView: View {
                         .font(.headline)
                     Text("\(restaurant.rating) stars")
                         .font(.subheadline)
+                    Text("Tags: \(restaurant.tags[0])")
+                        .font(.subheadline)
                 }
             }
             .navigationBarTitle("Featured Restaurants")
