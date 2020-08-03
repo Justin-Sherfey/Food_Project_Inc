@@ -11,7 +11,7 @@ import Foundation
 struct Restaurant: Identifiable {
     var id: String = UUID().uuidString
     
-    var displayName: String
     var name: String
-    var tag: String
+    var rating: Double
+    var tag: Array<String>
 }

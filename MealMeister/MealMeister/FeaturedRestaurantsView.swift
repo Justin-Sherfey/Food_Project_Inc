@@ -15,11 +15,9 @@ struct FeaturedRestaurantsView: View {
         NavigationView {
             List(viewModel.restaurants) { restaurant in
                 VStack(alignment: .leading) {
-                    Text(restaurant.displayName)
-                        .font(.headline)
                     Text(restaurant.name)
-                        .font(.subheadline)
-                    Text(restaurant.tag)
+                        .font(.headline)
+                    Text("\(restaurant.rating) stars")
                         .font(.subheadline)
                 }
             }

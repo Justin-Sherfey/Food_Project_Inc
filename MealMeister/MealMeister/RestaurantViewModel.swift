@@ -13,6 +13,7 @@ class RestaurantViewModel: ObservableObject {
     @Published var restaurants = [Restaurant]()
     
     private var db = Firestore.firestore()
+    private var noTags: Array<String> = ["No Tags"]
     
     func fetchData() {
         db.collection("Restaurants").addSnapshotListener { (querySnapshot, error) in
@@ -24,11 +25,11 @@ class RestaurantViewModel: ObservableObject {
             self.restaurants = documents.map { (queryDocumentSnapshot) -> Restaurant in
                 let data = queryDocumentSnapshot.data()
                 
-                let displayName = data["displayName"] as? String ?? ""
-                let name = data["name"] as? String ?? ""
-                let tag = data["tag"] as? String ?? ""
+                let name = data["name"] as? String ?? "No name"
+                let rating = data["rating"] as? Double ?? 0
+                let tag = data["tag"] as? Array<String> ?? self.noTags
                 
-                return Restaurant(displayName: displayName, name: name, tag: tag)
+                return Restaurant(name: name, rating: rating, tag: tag)
             }
         }
     }
