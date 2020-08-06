@@ -11,6 +11,7 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
+from Restaurant import Restaurant
 
 
 # global constants
@@ -20,10 +21,10 @@ URL = 'https://www.doordash.com/en-US'
 """
 function for navigating to scrapable part of site
 """
-def navigate(start, zipCode):
+def navigate(zipCode):
     # start browser and navigate to main page
-    browser = Chrome(executable_path='./chromedriver')
-    browser.get(start)
+    browser = Chrome(executable_path='../chromedriver')
+    browser.get(URL)
 
     # find address bar > enter zip code and hit enter
     addbar = WebDriverWait(browser, timeout=5).until(
@@ -76,5 +77,5 @@ def parse(text):
     tags = helpers.parseTags(parts[2])
     rating = helpers.parseRating(parts[-3])
 
-    return (displayName, name, tags, rating)
+    return Restaurant(displayName, name, tags, rating)
 
