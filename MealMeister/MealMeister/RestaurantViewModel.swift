@@ -27,7 +27,10 @@ class RestaurantViewModel: ObservableObject {
                 
                 let name = data["name"] as? String ?? "No name"
                 let rating = data["rating"] as? Double ?? 0
-                let tags = data["tags"] as? Array<String> ?? self.noTags
+                var tags = data["tags"] as? Array<String> ?? self.noTags
+                if tags.isEmpty == true {
+                    tags = self.noTags
+                }
                 
                 return Restaurant(name: name, rating: rating, tags: tags)
             }
